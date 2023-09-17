@@ -44,4 +44,51 @@
         --| Copy Data from Array1 to Array2
         Array2 = 7 -3 5 19 27 -16 13 -7
 
-*/
+*/#include <stdio.h>
+
+int main() {
+    int Array1[10];
+    int Array2[10];
+
+    // รับข้อมูลและบันทึกไปใน Array1
+    int i = 0;
+    while (1) {
+        printf("Input value to Array1 [%d]: ", i);
+        scanf("%d", &Array1[i]);
+        if (Array1[i] == -1) {
+            break;
+        }
+        i++;
+    }
+
+    // คัดลอกข้อมูลจาก Array1 ไปยัง Array2
+    for (int j = 0; j < i; j++) {
+        Array2[j] = Array1[j];
+    }
+
+    // แสดงข้อมูลใน Array1
+    printf("Array1 = ");
+    for (int j = 0; j < i; j++) {
+        printf("%d ", Array1[j]);
+    }
+
+    // แสดงข้อมูลใน Array2
+    printf("\nArray2 = ");
+    for (int j = 0; j < i; j++) {
+        printf("%d ", Array2[j]);
+    }
+
+    // คัดลอกข้อมูลจาก Array1 ไปยัง Array2
+    for (int j = 0; j < i; j++) {
+        Array2[j] = Array1[j];
+    }
+
+    // แสดงข้อมูลใน Array2 หลังจากคัดลอก
+    printf("\n--| Copy Data from Array1 to Array2\n");
+    printf("Array2 = ");
+    for (int j = 0; j < i; j++) {
+        printf("%d ", Array2[j]);
+    }
+
+    return 0;
+}
